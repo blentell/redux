@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 function Header() {
-	// const user = useSelector((state) => state.user);
+	const user = useSelector((state) => state.user);
 
 	return (
 		<Box sx={{ flexGrow: 1 }}>
@@ -21,24 +21,13 @@ function Header() {
 							<Link to="/">Home page</Link>
 						</Typography>
 					</Box>
-					{/* {user ? (
+					{user ? (
 						`Hi, ${user.firstName}`
-					) : ( */}
+					) : (
 						<Link to="/signin">
 							<Button color="inherit">Sign In</Button>
 						</Link>
-					{/* )} */}
-					{/* <Link to="/cart">
-						<IconButton
-							size="large"
-							edge="start"
-							color="inherit"
-							aria-label="cart"
-							sx={{ ml: 2, mr: -1 }}
-						>
-							<ShoppingCartIcon />
-						</IconButton>
-					</Link> */}
+					)}
 				</Toolbar>
 			</AppBar>
 		</Box>

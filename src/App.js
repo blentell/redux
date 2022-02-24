@@ -1,14 +1,15 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-// import { Provider } from "react-redux";
+import { Provider } from "react-redux";
 import HomePage from "./components/pages/HomePage";
 import SignInPage from "./components/pages/SignInPage";
 import TweetPage from "./components/pages/TweetPage";
 
-// import store from "./reduxStore";
+import store from "./reduxStore";
+
 function App() {
   return (
-		// <Provider store={store}>
+		<Provider store={store}>
     <div className="App">      
 				<BrowserRouter>
 				<Routes>
@@ -18,7 +19,7 @@ function App() {
 				</Routes>
 				</BrowserRouter>
 			</div>
-		// </Provider>
+		</Provider>
 	);
 }
 
